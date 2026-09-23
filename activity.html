@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My HTML Practical Activity</title>
+
+    <style>
+        body {  background-color: skyblue;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin: 0;
+                padding: 20px; }
+
+        section { background-color: white;
+                  width: 80%;
+                  margin: 20px auto;
+                  padding: 25px;
+                  border-radius: 10px; }
+
+        h1 { color: #087ea4; }
+
+        h2 { color: #087ea4; }
+
+        h3 { color: #333; }
+
+        p { font-size: 16px; }
+
+        figure { display: inline-block;
+                  margin: 15px; }
+
+        img { border-radius: 10px;}
+
+        a { color: #087ea4;
+            text-decoration: none;}
+
+        a:hover { text-decoration: underline; }
+
+        blockquote { font-style: italic; }
+
+        video { border-radius: 10px;}
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== Section 1: Images ==================== -->
+    <section id="images-section">
+
+        <h1 id="main-heading">My HTML Practical Activity</h1>
+
+        <h2>Section 1: Images</h2>
+
+        <p>Here are some pictures that I want to include in my webpage.</p>
+
+        <figure>
+            <img src="images/ME2.jpg" alt="My Personal Picture" width="300" height="450">
+            <figcaption>Figure 1: This is me attending soirée party!!!!</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/FAM 1.jpg" alt="My Family Picture" width="300">
+            <figcaption>Figure 2: Happy BirthDay to you Dad!!</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/Friends_Gym-Version.jpg" alt="A Picture with Friends" width="300">
+            <figcaption>Figure 3: Picture lang for attendance 😂</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/THEM19.jpg" alt="Travel Picture" width="300">
+            <figcaption>Figure 4: 1st time in Baguio!</figcaption>
+        </figure>
+
+    </section>
+
+    <!-- ==================== Section 2: Hyperlinks ==================== -->
+    <section id="links-section">
+
+        <h2>Section 2: Hyperlinks</h2>
+
+        <p>
+            <a href="firstcode.html">
+                Visit my Previous HTML Activity
+            </a>
+        </p>
+
+        <p>
+            <a href="https://www.facebook.com/richelleann.calabroso" target="_blank">
+                Visit My Facebook Profile
+            </a>
+        </p>
+
+        <p>
+            <a href="mailto:richelleanncalabroso13@gmail.com">
+                Send an Email to my Personal Email Account
+            </a>
+        </p>
+
+        <p>
+            <a href="#dom-section">
+                Go to the HTML DOM Section
+            </a>
+        </p>
+
+    </section>
+
+    <!-- ==================== Section 3: Multimedia ==================== -->
+    <section id="multimedia-section">
+
+        <h2>Section 3: Multimedia</h2>
+
+        <h3>Audio</h3>
+
+        <audio controls>
+            <source src="multimedia/Jose Mari Chan - Christmas In Our Hearts (Lyrics) (1).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Video</h3>
+
+        <figure>
+            <video controls width="400">
+                <source src="multimedia/Dogs Fighting.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+
+            <figcaption>Fight.. fight!!! 😂</figcaption>
+        </figure>
+
+    </section>
+
+    <!-- ==================== Section 4: Useful Tags ==================== -->
+    <section id="useful-tags-section">
+
+        <h2>Section 4: Useful Tags</h2>
+
+        <!-- I used the abbr tag to show the full meaning of the program I am studying. -->
+        <p>
+            I am currently studying
+            <abbr title="Bachelor of Science in Information Technology"> BSIT </abbr>
+            and learning different technologies as part of my course.
+        </p>
+
+        <!-- I used the blockquote tag to show a quotation that reflects my thoughts about growth and change. -->
+        <blockquote>
+            “Change is inevitable. Growth is optional.” — <cite>John C. Maxwell</cite>
+        </blockquote>
+
+        <p>
+            I like this quote because I believe it is true, but at the same time,
+            it also scares me because change can be difficult and sometimes uncertain.
+        </p>
+
+        <!-- I used the mark tag to highlight an important part of my journey as an IT student. -->
+        <p>
+            As an IT student, <mark>learning how to create webpages is also part of my journey</mark>
+            as I continue to learn and develop new skills.
+        </p>
+
+    </section>
+
+    <!-- ==================== Section 5: HTML DOM ==================== -->
+    <section id="dom-section">
+
+        <h2>Section 5: HTML DOM</h2>
+
+        <p>
+            The HTML DOM represents a webpage as a tree of elements.
+            Each element can have a parent and child element.
+        </p>
+
+    </section>
+
+    <!--
+    DOM Parent-Child Explanation:
+    The body element is the parent of the section elements on this webpage.
+    The multimedia section is the parent of the figure element containing my video.
+    The figure element is the parent of the video element and the figcaption.
+    The video element is the parent of the source element that provides the video file.
+    -->
+
+</body>
+</html>
