@@ -1,0 +1,260 @@
+/* 
+   1. GENERAL PAGE STYLES
+   Part B + Part C: Universal Selector (Reset)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 16px;
+    color: #456895;
+    background-color: #DDF2FF;
+    line-height: 1.6;
+}
+
+
+/* 
+   2. HEADER AND HEADINGS
+   Part A + Part B: Type and Grouped Selectors 
+*/
+
+header {
+    text-align: center;
+    padding: 20px 16px;
+}
+
+/* First h1 rule */
+h1 {
+    color: navy;
+    font-size: 2rem;
+}
+
+/* CASCADE EXAMPLE: 
+   First h1 rule, Ang duha ka h1 rules nag target sila sa same element
+   and specificity. So if ang specificity kay equal then the last one written
+   will win or mao ang ang output mugawas sa page, which is kaning h1 na naay color: #526DB0; */
+
+h1 {
+    color: #526DB0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Grouped selector: one rule for both h1 and h2 */
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    color: #456895;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* Pseudo-element: adds a cloud icon before every h2 */
+h2::before {
+    content: "☁ ";
+    color: #718CC8;
+}
+
+
+/* 
+   3. NAVIGATION
+   Part B (hover) + Part D (inline-block)
+*/
+
+nav {
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* inline-block lets the links sit in a row AND accept
+   padding, margin, and a background */
+nav a {
+    display: inline-block;
+    padding: 9px 16px;
+    margin: 5px;
+    color: #456895;
+    background-color: #CDE9FF;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* Pseudo-class: hover effect on the nav links */
+nav a:hover {
+    color: white;
+    background-color: #526DB0;
+}
+
+
+/* ==========================================
+   4. MAIN CONTENT AND PROFILE CARDS
+   Part B + Part C: Class, ID, Box Model, Positioning
+   ========================================== */
+
+main {
+    padding: 24px;
+    text-align: center;
+}
+
+/* TOTAL RENDERED WIDTH OF ONE .card
+   With box-sizing: border-box, the width includes padding and
+   border, so one card is exactly 500px wide.
+   Without it (content-box), the width would be:
+   500px (content) + 40px (padding: 20px left + 20px right)
+   + 4px (border: 2px left + 2px right) = 544px. */
+.card {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;          /* centers the card horizontally */
+    margin-bottom: 20px;     /* spaces the cards apart vertically */
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #C9E5F8;
+    border-radius: 18px;
+    box-shadow: 0 4px 10px rgba(69, 104, 149, 0.08);
+}
+
+/* ID selector: makes the About card stand out.
+   position: relative makes it the reference point for the badge. */
+#about {
+    position: relative;
+    border: 3px solid #8DBBEA;
+}
+
+/* Badge in the top-right corner of the About card.
+   position: absolute places it relative to #about. */
+#about::after {
+    content: "CSU Student!";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 8px;
+    color: white;
+    background-color: #526DB0;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+
+/* ==========================================
+   5. INTRODUCTION AND PARAGRAPHS
+   Part B: Class and Descendant Selectors
+   ========================================== */
+
+/* Class selector: the introduction paragraph.
+   Color is written in rgb() format. */
+.intro {
+    font-size: 1rem;
+    color: rgb(49, 91, 145);
+    line-height: 1.5;
+}
+
+/* Descendant selector: every p inside a .card */
+.card p {
+    text-align: left;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   6. SKILLS LIST
+   Part B + Part D: Child Selector and Flexbox
+   ========================================== */
+
+/* Flex container: arranges the skills in a centered row */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    list-style: none;
+}
+
+/* Child selector: styles each li directly inside .skills-list
+   so it looks like a small tag */
+.skills-list > li {
+    padding: 8px 12px;
+    color: #315B91;
+    font-weight: bold;
+    background-color: #EAF6FF;
+    border-radius: 10px;
+}
+
+
+/* ==========================================
+   7. VISIBILITY AND SCROLLING
+   Part D: Display, Visibility, and Overflow
+   ========================================== */
+
+/* DISPLAY: NONE vs VISIBILITY: HIDDEN
+   Both paragraphs cannot be seen on the page, but they act
+   differently:
+   - .hide-none (display: none) is removed from the layout
+     completely, so no gap is left and the next paragraph
+     moves up.
+   - .hide-visibility (visibility: hidden) is invisible but
+     still takes up its space, so an empty gap appears above
+     "This paragraph is always visible." */
+
+.hide-none {
+    display: none;
+}
+
+.hide-visibility {
+    visibility: hidden;
+}
+
+/* Fixed height with a scrollbar when the content is too long */
+.scroll-box {
+    height: 120px;
+    overflow: auto;
+}
+
+
+/* ==========================================
+   8. FOOTER
+   Part A + Part C: Footer Styling
+   ========================================== */
+
+footer {
+    text-align: center;
+    padding: 16px;
+    color: #456895;
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================
+   9. REFLECTION QUESTIONS
+   Reflection Questions Answer in 2–3 sentences each. Write your answers in a comment at the very bottom of styles.css, or on a separate sheet.
+
+   1. In your own words, why did one of your two conflicting rules win in Part A? (Think specificity and order.)
+   Ang duha ka h1 rules nag target sa same element ug parehas ang specificity.
+   Kung equal ang specificity, ang rule nga gisulat sa ulahi ang mo daug.
+   Mao nang ang second h1 (color #526DB0, 2.3rem) ang makita sa page, dili ang first (color navy, 2rem). 
+
+   2. What is the rendered width of one .card if box-sizing were content-box instead of border-box? Show your computation. 
+   Kung content-box, ang rendered width sa .card kay 544px. Ang
+   computation: 500px (width) + 40px (padding, 20px x 2) + 4px (border,
+   2px x 2) = 544px. Kung border-box, 500px lang kay apil na ang
+   padding ug border sa width.
+
+   3. When would you choose visibility: hidden instead of display: none?
+   Gamiton nako ang visibility: hidden kung gusto nako itago ang element
+   pero dili nako gusto ma-change ang layout sa uban nga content, kay naa
+   gihapon ang space niya. Gamiton nako ang display: none kung gusto nako
+   nga i remove ang element sa layout ug walay space nga mabilin.
+   ========================================== */
